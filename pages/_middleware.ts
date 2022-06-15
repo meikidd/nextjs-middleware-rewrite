@@ -6,6 +6,7 @@ export async function middleware(request: NextRequest) {
 
   const newUrl = request.nextUrl.clone();
   newUrl.searchParams.set('hello','world');
+  newUrl.pathname = '/login';
   const response = NextResponse.rewrite(newUrl);
   
   console.log('_middleware:', newUrl.toString());
